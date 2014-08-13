@@ -47,14 +47,14 @@ doora =[]
 # Following compares unreversed names from dooranet file to reversed
 # file names. This is done by creating sets from both lists of names
 # and doing a difference operation to them.
-for i in (set([i[0] for i in s])-set([i[1] for i in s2])):
+for i in (set([i[0] for i in s])-set([i[1] for i in s2])-set(i[0] for i in s2)):
     if i not in doora:
         doora.append(i)
 
 cable =[]
 # Following compares unreversed names from cable designer to reversed
 # names from dooanet.
-for i in (set([i[0] for i in s2])-set([i[1] for i in s])):
+for i in (set([i[0] for i in s2])-set([i[1] for i in s])-set(i[0] for i in s)):
     if i not in cable:
         cable.append(i)
 
